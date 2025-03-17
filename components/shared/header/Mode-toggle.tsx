@@ -3,64 +3,32 @@
 import { useState, useEffect } from 'react'
 
 import { useTheme } from 'next-themes'
-import { MoonIcon, SunMoon, SunIcon } from 'lucide-react'
-
+import { MoonIcon, SunIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuContent,
-  DropdownMenuCheckboxItem,
-} from '@/components/ui/dropdown-menu'
 
 export function ModeToggle() {
-  const [mounted, setMounted] = useState<boolean>(false) // This is to prevent hydration error
+  const [mounted, setMounted] = useState(false) //* This is to prevent hydration error
   const { theme, setTheme } = useTheme()
 
+  //* This is to prevent hydration error
   useEffect(() => {
     setMounted(true)
   }, [])
 
+  //* This is to prevent hydration error
   if (!mounted) return null
 
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark')
+  }
+
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button
-          variant='ghost'
-          className='focus-visible:ring-0 focus-visible:ring-offset-0'>
-          {theme === 'system' ? (
-            <SunMoon />
-          ) : theme === 'dark' ? (
-            <MoonIcon />
-          ) : (
-            <SunIcon />
-          )}
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent>
-        <DropdownMenuLabel>Appearance</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuCheckboxItem
-          checked={theme === 'system'}
-          onClick={() => setTheme('system')}>
-          System
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem
-          checked={theme === 'light'}
-          onClick={() => setTheme('light')}>
-          Light
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem
-          checked={theme === 'dark'}
-          onClick={() => {
-            setTheme('dark')
-          }}>
-          Dark
-        </DropdownMenuCheckboxItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <Button
+      variant='ghost'
+      onClick={toggleTheme}
+      className='focus-visible:ring-0 focus-visible:ring-offset-0'
+      aria-label='Toggle theme'>
+      {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+    </Button>
   )
 }
