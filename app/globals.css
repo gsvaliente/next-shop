@@ -9,69 +9,31 @@
 
 @layer utilities {
   .wrapper {
-    max-width: 80rem;
-    padding: 1.25rem;
-    width: 100%;
-  }
-  @media (min-width: 768px) {
-    .wrapper {
-      padding-left: 2.5rem;
-      padding-right: 2.5rem;
-    }
-  }
-  @media (min-width: 1024px) {
-    .wrapper {
-      margin-left: auto;
-      margin-right: auto;
-    }
+    @apply max-w-7xl lg:mx-auto p-5 md:px-10 w-full;
   }
 
   .flex-start {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    @apply flex justify-start items-center;
   }
 
   .flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @apply flex justify-center items-center;
   }
 
   .flex-between {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @apply flex justify-between items-center;
   }
 
   .h1-bold {
-    font-weight: 700;
-    font-size: 1.875rem;
-  }
-  @media (min-width: 1024px) {
-    .h1-bold {
-      font-size: 2.25rem;
-    }
+    @apply font-bold text-3xl lg:text-4xl;
   }
 
   .h2-bold {
-    font-weight: 700;
-    font-size: 1.5rem;
-  }
-  @media (min-width: 1024px) {
-    .h2-bold {
-      font-size: 1.875rem;
-    }
+    @apply font-bold text-2xl lg:text-3xl;
   }
 
   .h3-bold {
-    font-weight: 700;
-    font-size: 1.25rem;
-  }
-  @media (min-width: 1024px) {
-    .h3-bold {
-      font-size: 1.5rem;
-    }
+    @apply font-bold text-xl lg:text-2xl;
   }
 }
 
