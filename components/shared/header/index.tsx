@@ -5,6 +5,7 @@ import { ShoppingCart, UserIcon } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { APP_NAME } from '@/lib/constants'
+import { ModeToggle } from './Mode-toggle'
 
 export function Header() {
   return (
@@ -27,6 +28,7 @@ export function Header() {
           </Link>
         </div>
         <div className='space-x-2'>
+          <ModeToggle />
           <Button
             asChild
             variant='ghost'>
