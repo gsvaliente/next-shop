@@ -14,9 +14,6 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
-//? this is if i added a new font
-// const inter = Inter({ subsets: ['latin'] })
-
 export const metadata: Metadata = {
   title: {
     template: `%s | E-Store`,
@@ -36,12 +33,10 @@ export default function RootLayout({
       lang='en'
       suppressHydrationWarning>
       <body
-        //?? this would be if i added a new font className={`${geistSans.variable} ${geistMono.variable} ${inter.className} antialiased`}>
         className={`${geistSans.variable} ${geistMono.variable}  antialiased`}>
         <ThemeProvider
           attribute={'class'}
-          defaultTheme='system'
-          enableSystem
+          defaultTheme='light'
           disableTransitionOnChange>
           {children}
         </ThemeProvider>
