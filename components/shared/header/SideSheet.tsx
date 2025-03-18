@@ -19,7 +19,7 @@ export function SideSheet() {
         <SheetTrigger className='align-middle'>
           <EllipsisVertical />
         </SheetTrigger>
-        <SheetContent className='flex flex-col items-start'>
+        <SheetContent className='flex flex-col items-start py-3 pl-3'>
           <SheetTitle>Menu</SheetTitle>
           <ModeToggle />
           <Button

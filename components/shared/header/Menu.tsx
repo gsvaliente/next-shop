@@ -1,10 +1,10 @@
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
-import { ShoppingCart, UserIcon } from 'lucide-react'
 
 import { ModeToggle } from '@/components/shared/header/Mode-toggle'
 import { SideSheet } from '@/components/shared/header/SideSheet'
+import { ShoppingCart, UserIcon } from 'lucide-react'
 
 export function Menu() {
   return (
