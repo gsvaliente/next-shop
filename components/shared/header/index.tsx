@@ -1,11 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { ShoppingCart, UserIcon } from 'lucide-react'
-
-import { Button } from '@/components/ui/button'
 import { APP_NAME } from '@/lib/constants'
-import { ModeToggle } from './Mode-toggle'
+import { Menu } from './Menu'
 
 export function Header() {
   return (
@@ -27,23 +24,7 @@ export function Header() {
             </span>
           </Link>
         </div>
-        <div className='space-x-2'>
-          <ModeToggle />
-          <Button
-            asChild
-            variant='ghost'>
-            <Link href='/cart'>
-              <ShoppingCart /> Cart
-            </Link>
-          </Button>
-          <Button
-            asChild
-            variant='ghost'>
-            <Link href='/cart'>
-              <UserIcon /> Sign In
-            </Link>
-          </Button>
-        </div>
+        <Menu />
       </div>
     </header>
   )
