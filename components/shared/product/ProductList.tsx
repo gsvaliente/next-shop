@@ -1,5 +1,6 @@
 import { ProductCard } from '@/components/shared/product/ProductCard'
 import { Product } from '@/types/product'
+
 type ProductListProps = {
   data: Product[]
   title?: string
