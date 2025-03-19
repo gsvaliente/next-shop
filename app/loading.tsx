@@ -4,11 +4,11 @@ import loader from '@/assets/loader.gif'
 
 export default function Loading() {
   return (
-    <div>
+    <div className='fixed inset-0 w-full h-full flex items-center justify-center bg-white/80'>
       <Image
         src={loader}
-        width={100}
-        height={100}
+        width={55}
+        height={55}
         alt='loading spinner'
         unoptimized
       />

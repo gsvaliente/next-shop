@@ -3,7 +3,7 @@ import { getLatestProducts } from '@/lib/actions/product.actions'
 
 export default async function Homepage() {
   const latestProducts = await getLatestProducts()
-  console.log(latestProducts)
+  // console.log(latestProducts)
   return (
     <ProductList
       data={latestProducts}
