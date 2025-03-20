@@ -1,6 +1,7 @@
 import { formatPrice } from '@/lib/utils'
 import { z } from 'zod'
 
+// FORMAT PRICE/CURRENCY VALIDATOR
 const currency = z
   .string()
   .refine(
